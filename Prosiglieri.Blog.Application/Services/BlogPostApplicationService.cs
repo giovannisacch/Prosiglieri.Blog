@@ -31,23 +31,23 @@ namespace Prosiglieri.Blog.Application.Services
             return blogPost.MapToBlogPostResponseModel();
         }
 
-        public async Task<BlogPostResponseModel> AddBlogPost(CreateBlogPostRequestModel createBlogPostRequestModel)
+        public async Task<BlogPost> AddBlogPost(CreateBlogPostRequestModel createBlogPostRequestModel)
         {
             var blogPost = createBlogPostRequestModel.MapToBlogPost();
 
             await _blogPostRepository.AddAsync(blogPost);
 
-            return blogPost.MapToBlogPostResponseModel();
+            return blogPost;
         }
 
-        public async Task<BlogPostResponseModel> AddCommentToPost(CommentRequestModel commentRequestModel)
+        public async Task<BlogPostResponseModel> AddCommentToPost(Guid id, CommentRequestModel commentRequestModel)
         {
-            var blogPost = await _blogPostRepository.GetBlogPostByIdAsync(commentRequestModel.BlogPostId, false);
+            var blogPost = await _blogPostRepository.GetBlogPostByIdAsync(id, false);
             if (blogPost == null)
                 return null;
-            blogPost.AddComment(commentRequestModel.Content);
+            var comment = blogPost.AddComment(commentRequestModel.Content);
 
-            await _blogPostRepository.UpdateAsync(blogPost);
+            await _blogPostRepository.AddCommentAsync(blogPost, comment);
 
             return blogPost.MapToBlogPostResponseModel();
         }

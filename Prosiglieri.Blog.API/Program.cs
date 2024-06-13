@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Prosiglieri.Blog.API;
 using Prosiglieri.Blog.Application.Services;
 using Prosiglieri.Blog.Domain.BlogPost;
 using Prosiglieri.Blog.Infra;
@@ -24,11 +25,8 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.ApplyMigrations();
 }
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
 
 app.MapControllers();
 

@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace Prosiglieri.Blog.Application.Models
 {
-    public record CommentRequestModel(string Content);
+    public record ErrorMessage(string Message);
 }

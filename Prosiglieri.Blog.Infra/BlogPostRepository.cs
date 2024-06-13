@@ -16,7 +16,7 @@ namespace Prosiglieri.Blog.Infra
         public BlogPostRepository(BlogDbContext dbContext)
         {
             _dbContext = dbContext;
-            _db = dbContext.Set<BlogPost>();
+            _db = dbContext.BlogPosts;
         }
 
         public async Task<List<BlogPost>> GetAllBlogPostsAsync()
@@ -27,9 +27,9 @@ namespace Prosiglieri.Blog.Infra
         public async Task<BlogPost> GetBlogPostByIdAsync(Guid id, bool asNoTracking)
         {
             if (asNoTracking)
-                return await _db.Include(x => x.Comments).AsNoTracking().FirstAsync(x => x.Id == id);
+                return await _db.Include(x => x.Comments).AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
 
-            return await _db.Include(x => x.Comments).FirstAsync(x => x.Id == id);
+            return await _db.Include(x => x.Comments).FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task AddAsync(BlogPost blogPost)
@@ -38,10 +38,11 @@ namespace Prosiglieri.Blog.Infra
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task UpdateAsync(BlogPost blogPost)
+        public async Task AddCommentAsync(BlogPost blogPost, Comment commentToAdd)
         {
+            _dbContext.Comments.Add(commentToAdd);
             _db.Update(blogPost);
-            await _dbContext.SaveChangesAsync();
+            _dbContext.SaveChanges();
         }
     }
 }

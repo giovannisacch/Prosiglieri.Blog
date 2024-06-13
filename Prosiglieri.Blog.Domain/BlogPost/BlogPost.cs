@@ -13,6 +13,10 @@ namespace Prosiglieri.Blog.Domain.BlogPost
         public int CommentsCount { get; set; }
         public List<Comment> Comments { get; set; }
 
+        public BlogPost()
+        {
+            
+        }
         public BlogPost(string title, string content)
         {
             Title = title;
@@ -20,10 +24,12 @@ namespace Prosiglieri.Blog.Domain.BlogPost
             Comments = new List<Comment>();
         }
 
-        public void AddComment(string comment)
+        public Comment AddComment(string comment)
         {
-            Comments.Add(new Comment(Id, comment));
+            var commentObject = new Comment(Id, comment);
+            Comments.Add(commentObject);
             CommentsCount++;
+            return commentObject;
         }
     }
 }
