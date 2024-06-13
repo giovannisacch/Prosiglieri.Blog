@@ -8,8 +8,8 @@ namespace Prosiglieri.Blog.Domain.BlogPost
 {
     public interface IBlogPostRepository
     {
-        Task<BlogPost> GetAllBlogPostsAsync();
-        Task<BlogPost> GetBlogPostByIdAsync(Guid id);
+        Task<List<BlogPost>> GetAllBlogPostsAsync();
+        Task<BlogPost> GetBlogPostByIdAsync(Guid id, bool asNoTracking);
         Task<BlogPost> AddAsync(BlogPost blogPost);
         Task<BlogPost> UpdateAsync(BlogPost blogPost);
     }

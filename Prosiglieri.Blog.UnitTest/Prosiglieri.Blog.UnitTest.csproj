@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Prosiglieri.Blog.Application\Prosiglieri.Blog.Application.csproj" />
     <ProjectReference Include="..\Prosiglieri.Blog.Domain\Prosiglieri.Blog.Domain.csproj" />
   </ItemGroup>
 
