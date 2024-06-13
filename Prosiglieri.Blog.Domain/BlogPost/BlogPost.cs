@@ -8,8 +8,9 @@ namespace Prosiglieri.Blog.Domain.BlogPost
 {
     public class BlogPost : EntityBase
     {
-       public string Title { get; set; }
-       public string Content { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
+        public int CommentsCount { get; set; }
         public List<Comment> Comments { get; set; }
 
         public BlogPost(string title, string content)
@@ -22,14 +23,7 @@ namespace Prosiglieri.Blog.Domain.BlogPost
         public void AddComment(string comment)
         {
             Comments.Add(new Comment(comment));
-        }
-
-        public int GetCommentsCount() 
-        {
-            if(Comments == null)
-                return 0;
-
-            return Comments.Count; 
+            CommentsCount++;
         }
     }
 }
