@@ -22,7 +22,7 @@ namespace Prosiglieri.Blog.Domain.BlogPost
 
         public void AddComment(string comment)
         {
-            Comments.Add(new Comment(comment));
+            Comments.Add(new Comment(Id, comment));
             CommentsCount++;
         }
     }

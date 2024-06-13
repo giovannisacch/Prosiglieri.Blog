@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Prosiglieri.Blog.Application\Prosiglieri.Blog.Application.csproj" />
+    <ProjectReference Include="..\Prosiglieri.Blog.Infra\Prosiglieri.Blog.Infra.csproj" />
   </ItemGroup>
 
 </Project>

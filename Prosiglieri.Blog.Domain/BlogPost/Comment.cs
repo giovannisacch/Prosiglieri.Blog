@@ -8,10 +8,14 @@ namespace Prosiglieri.Blog.Domain.BlogPost
 {
     public class Comment : EntityBase
     {
+        public Guid BlogPostId { get; set; }
         public string Content { get; set; }
 
-        public Comment(string content)
+        public BlogPost BlogPost { get; set; }
+
+        public Comment(Guid blogPostId, string content)
         {
+            BlogPostId = blogPostId;
             Content = content;
         }
 

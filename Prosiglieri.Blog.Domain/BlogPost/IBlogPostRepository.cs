@@ -10,7 +10,7 @@ namespace Prosiglieri.Blog.Domain.BlogPost
     {
         Task<List<BlogPost>> GetAllBlogPostsAsync();
         Task<BlogPost> GetBlogPostByIdAsync(Guid id, bool asNoTracking);
-        Task<BlogPost> AddAsync(BlogPost blogPost);
-        Task<BlogPost> UpdateAsync(BlogPost blogPost);
+        Task AddAsync(BlogPost blogPost);
+        Task UpdateAsync(BlogPost blogPost);
     }
 }

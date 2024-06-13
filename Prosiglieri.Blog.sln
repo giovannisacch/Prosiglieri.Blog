@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prosiglieri.Blog.Domain", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prosiglieri.Blog.UnitTest", "Prosiglieri.Blog.UnitTest\Prosiglieri.Blog.UnitTest.csproj", "{98A42495-0AB6-4D7D-87FB-FF25126ADA43}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prosiglieri.Blog.Infra", "Prosiglieri.Blog.Infra\Prosiglieri.Blog.Infra.csproj", "{17D119E2-6C69-4F5A-8E7F-EB81C62B550B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{98A42495-0AB6-4D7D-87FB-FF25126ADA43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98A42495-0AB6-4D7D-87FB-FF25126ADA43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98A42495-0AB6-4D7D-87FB-FF25126ADA43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17D119E2-6C69-4F5A-8E7F-EB81C62B550B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17D119E2-6C69-4F5A-8E7F-EB81C62B550B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17D119E2-6C69-4F5A-8E7F-EB81C62B550B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17D119E2-6C69-4F5A-8E7F-EB81C62B550B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
