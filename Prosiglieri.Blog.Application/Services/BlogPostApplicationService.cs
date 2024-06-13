@@ -14,5 +14,9 @@ namespace Prosiglieri.Blog.Application.Services
             
         }
 
+        public async Task<BlogPostListResponseModel> GetBlogPostsList()
+        {
+            return null;
+        }
     }
 }
